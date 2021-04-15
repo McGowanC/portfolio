@@ -1,0 +1,191 @@
+/* Standard CSS resets */ 
+
+html {
+    box-sizing: border-box;
+    padding:0;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+   
+  }
+
+html {
+    max-width:1300px;
+   
+}
+
+body {
+    margin: 0;
+    background-color: #f8f9fa;
+}
+
+
+/* Header section */ 
+
+.header-section {
+    background-color: #dc7c75;
+    color: white;
+    padding: 0 20px 2px 10px;
+}
+
+
+
+.header {
+    font-family: 'Montserrat';
+    font-size: 1.6rem;
+    
+}
+
+.header h1 {
+    margin: 10px 0 10px 0;
+    
+}
+
+
+
+.header h3 { 
+    margin: 10px 0;
+    animation-name: flow;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-delay: 1.5s;
+    background: linear-gradient(60deg, #ffffff 30%, #d43131 40%, 60%, #552586 70%, 90%,#ffffff 100%);
+    background-size: 300%;
+
+    -webkit-background-clip: text;
+        background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+
+@keyframes flow {
+
+    0%  {background-position: 0% 0%;}
+    40% {background-position: 150% 0%;}
+    100% {background-position: 150% 0;}
+   
+
+
+}
+
+
+.about-craig p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1em;
+    line-height: 1.5;
+   
+}
+
+.underlined-fancy {
+    -webkit-text-decoration: darkturquoise solid underline;
+  text-decoration: darkturquoise solid underline;
+  -webkit-text-decoration-skip: ink;
+  text-decoration-skip: ink;
+
+}
+
+
+/* GET IN TOUCH BUTTON */ 
+
+.get-in-touch { 
+    margin: 20px 10px 20px 10px;
+    background-color: #dc7c75;
+    height: 4rem;
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+
+}
+
+.get-in-touch:hover {
+    background-color: #d89e9a;
+
+}
+
+.get-in-touch p {
+
+    font-family: 'Montserrat';
+    color: white;
+    font-size: 1.5rem;
+    margin: 0;
+    
+}
+
+/* Projects section */
+
+.projects .my-work {
+    padding-left: 10px;
+    font-family: 'Montserrat';
+    font-size: 2rem;
+}
+
+.project-card {
+    margin: 10px 20px 20px 20px;
+    padding: 5px 20px 10px 20px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-radius: 7px;
+    
+
+}
+
+.card-text h3 {
+    font-family: 'Montserrat';
+}
+
+.card-text p, .card-text ul li {
+    font-family: 'Roboto';
+}
+
+.project-card img {
+    max-width: 100%;
+}
+
+
+/* Education Section */
+
+.experience {
+    padding-top: 5px;
+    padding-left: 15px;
+    background-color: white;
+    font-family: 'Montserrat';
+}
+
+.experience h1 {
+    font-family: 'Montserrat';
+}
+
+.experience ul li {
+    font-family: 'Roboto';
+    line-height: 1.3rem;
+
+    padding-bottom: 2px;
+}
+
+.view-cv-button {
+    background-color: white;
+    margin: 20px 10px 20px 10px;
+    background-color: #dc7c75;
+    height: 4rem;
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.view-cv-button p {
+
+    font-family: 'Montserrat';
+    color: white;
+    font-size: 1.5rem;
+    margin: 0;
+    
+}
