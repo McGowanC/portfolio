@@ -22,21 +22,36 @@ body {
 
 /* Header section */ 
 
+.craig-image {
+    display:none;
+}
+
 .header-section {
     background-color: #dc7c75;
     color: white;
     padding: 0 20px 2px 10px;
 }
 
+.off-white {
+    color:  rgb(237, 190, 186);
+}
 
 
 .header {
-    font-family: 'Montserrat';
     font-size: 1.6rem;
-    
+}
+
+.header p {
+    font-family: 'Montserrat';
+    font-weight: 500;
+    font-size: 1rem;
+    padding-top: 30px;
+    margin-top: 0;
+
 }
 
 .header h1 {
+    font-family: 'Montserrat';
     margin: 10px 0 10px 0;
     
 }
@@ -44,6 +59,7 @@ body {
 
 
 .header h3 { 
+    font-family: 'Montserrat';
     margin: 10px 0;
     animation-name: flow;
     animation-duration: 20s;
@@ -71,15 +87,16 @@ body {
 
 
 .about-craig p {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 1.1em;
     line-height: 1.5;
+    font-weight: 300;
    
 }
 
 .underlined-fancy {
-    -webkit-text-decoration: darkturquoise solid underline;
-  text-decoration: darkturquoise solid underline;
+    -webkit-text-decoration: 1.2px darkturquoise solid underline;
+  text-decoration: 1.2px darkturquoise solid underline;
   -webkit-text-decoration-skip: ink;
   text-decoration-skip: ink;
 
@@ -92,7 +109,7 @@ body {
     margin: 20px 10px 20px 10px;
     background-color: #dc7c75;
     height: 4rem;
-    border-radius: 10px;
+    border-radius: 6px;
 
     display: flex;
     flex-direction: row;
@@ -110,6 +127,7 @@ body {
 .get-in-touch p {
 
     font-family: 'Montserrat';
+    font-weight: 700;
     color: white;
     font-size: 1.5rem;
     margin: 0;
@@ -125,7 +143,7 @@ body {
 }
 
 .project-card {
-    margin: 10px 20px 20px 20px;
+    margin: 10px 20px 30px 20px;
     padding: 5px 20px 10px 20px;
     background-color: white;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
@@ -136,10 +154,15 @@ body {
 
 .card-text h3 {
     font-family: 'Montserrat';
+    font-size: 1.7rem;
 }
 
 .card-text p, .card-text ul li {
     font-family: 'Roboto';
+}
+
+.card-text ul li {
+    margin-bottom: 5px;
 }
 
 .project-card img {
@@ -151,7 +174,7 @@ body {
 
 .experience {
     padding-top: 5px;
-    padding-left: 15px;
+    padding-left: 20px;
     background-color: white;
     font-family: 'Montserrat';
 }
@@ -160,6 +183,7 @@ body {
     font-family: 'Montserrat';
 }
 
+
 .experience ul li {
     font-family: 'Roboto';
     line-height: 1.3rem;
@@ -167,12 +191,16 @@ body {
     padding-bottom: 2px;
 }
 
+.list-header {
+    font-family: 'Montserrat';
+}
+
 .view-cv-button {
     background-color: white;
     margin: 20px 10px 20px 10px;
     background-color: #dc7c75;
     height: 4rem;
-    border-radius: 10px;
+    border-radius: 6px;
 
     display: flex;
     flex-direction: row;
@@ -189,3 +217,93 @@ body {
     margin: 0;
     
 }
+
+@media screen and (min-width: 550px) {
+
+.header-section {
+    padding: 0 40px 2px 40px;
+
+}
+
+.view-cv-button, .get-in-touch {
+    margin: 20px 20px 20px 20px;
+}
+
+.projects .my-work {
+    padding-left: 20px;
+}
+
+}
+
+
+@media screen and (min-width: 800px) {
+
+    .full-page {
+       
+        display: grid;
+        grid-template-rows: auto;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-areas:
+            "header header header header"
+            "craig-image-div projects projects projects"
+            ". get-in-touch . ."
+            " exp exp exp exp"
+            ". . cv-button . "
+         ;
+    }
+   
+    
+
+    .craig-image-div {
+        grid-area: craig-image-div;
+        margin-top: -250px;
+        z-index: 10000000;
+
+    }
+    .craig-image {
+        display: inline-block;
+        grid-area: craig-image;
+        border-radius: 6px;
+        width: 200px;
+        margin-left: 50px;
+        position: sticky;
+        top:15px;
+        transition: all .3s;
+        
+       
+    }
+
+    .craig-image:hover {
+        transform: rotate(-5deg); 
+    }
+    
+    .header-section {
+        grid-area: header;
+        display: grid;
+        grid-template-columns: 300px 1fr;
+        grid-template-areas:
+        ". content"
+    }
+
+    .header-content {
+        grid-area: content;
+    }
+
+    .get-in-touch {
+        grid-area: get-in-touch;
+    }
+
+    .projects {
+        grid-area: projects
+    }
+
+    .experience {
+        grid-area: exp;
+    }
+
+    .view-cv-button {
+        grid-area: cv-button;
+    }
+
+    
+    }
