@@ -9,10 +9,7 @@ html {
    
   }
 
-html {
-    max-width:1300px;
-   
-}
+
 
 body {
     margin: 0;
@@ -21,10 +18,6 @@ body {
 
 
 /* Header section */ 
-
-.craig-image {
-    display:none;
-}
 
 .header-section {
     background-color: #dc7c75;
@@ -62,7 +55,7 @@ body {
     font-family: 'Montserrat';
     margin: 10px 0;
     animation-name: flow;
-    animation-duration: 20s;
+    animation-duration: 15s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
     animation-delay: 1.5s;
@@ -78,7 +71,7 @@ body {
 @keyframes flow {
 
     0%  {background-position: 0% 0%;}
-    40% {background-position: 150% 0%;}
+    50% {background-position: 150% 0%;}
     100% {background-position: 150% 0;}
    
 
@@ -105,7 +98,7 @@ body {
 
 /* GET IN TOUCH BUTTON */ 
 
-.get-in-touch { 
+.get-in-touch-mobile, .get-in-touch-desktop { 
     margin: 20px 10px 20px 10px;
     background-color: #dc7c75;
     height: 4rem;
@@ -124,7 +117,7 @@ body {
 
 }
 
-.get-in-touch p {
+.get-in-touch-mobile p, .get-in-touch-desktop p {
 
     font-family: 'Montserrat';
     font-weight: 700;
@@ -195,8 +188,7 @@ body {
     font-family: 'Montserrat';
 }
 
-.view-cv-button {
-    background-color: white;
+.view-cv-button-mobile, .view-cv-button-desktop {
     margin: 20px 10px 20px 10px;
     background-color: #dc7c75;
     height: 4rem;
@@ -209,13 +201,18 @@ body {
     align-items: center;
 }
 
-.view-cv-button p {
+.view-cv-button-mobile p, .view-cv-button-desktop {
 
     font-family: 'Montserrat';
     color: white;
     font-size: 1.5rem;
+    font-weight: 700;
     margin: 0;
     
+}
+
+.craig-image, .get-in-touch-desktop, .view-cv-button-desktop {
+    display:none;
 }
 
 @media screen and (min-width: 550px) {
@@ -225,7 +222,7 @@ body {
 
 }
 
-.view-cv-button, .get-in-touch {
+.view-cv-button-mobile, .get-in-touch-mobile {
     margin: 20px 20px 20px 20px;
 }
 
@@ -238,17 +235,21 @@ body {
 
 @media screen and (min-width: 800px) {
 
+    .get-in-touch-mobile, .view-cv-button-mobile {
+        display:none;
+    }
+
     .full-page {
        
         display: grid;
         grid-template-rows: auto;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 300px 800px 1fr 1fr;
         grid-template-areas:
             "header header header header"
-            "craig-image-div projects projects projects"
-            ". get-in-touch . ."
-            " exp exp exp exp"
-            ". . cv-button . "
+            "craig-image-div projects projects ."
+            ". . . ."
+            ". exp exp ."
+            ". . . . "
          ;
     }
    
@@ -258,6 +259,10 @@ body {
         grid-area: craig-image-div;
         margin-top: -250px;
         z-index: 10000000;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
 
     }
     .craig-image {
@@ -265,11 +270,11 @@ body {
         grid-area: craig-image;
         border-radius: 6px;
         width: 200px;
-        margin-left: 50px;
         position: sticky;
         top:15px;
         transition: all .3s;
-        
+        border: 2px solid black;
+
        
     }
 
@@ -280,7 +285,7 @@ body {
     .header-section {
         grid-area: header;
         display: grid;
-        grid-template-columns: 300px 1fr;
+        grid-template-columns: 300px 800px 1fr;
         grid-template-areas:
         ". content"
     }
@@ -289,21 +294,76 @@ body {
         grid-area: content;
     }
 
-    .get-in-touch {
+    .get-in-touch-desktop {
+        display: flex;
         grid-area: get-in-touch;
+        position: sticky;
+        top:335px;
+        width: 200px;
+        height: 3em;
+        border-radius: 7px;
+        border: 2px solid black;
     }
 
-    .projects {
-        grid-area: projects
+    .get-in-touch-desktop p {
+        font-size: 1.em;
     }
+
+    .view-cv-button-desktop {
+        display:flex;
+        width: 200px;
+        grid-area: cv-button;
+        position: sticky;
+        top:410px;
+        height: 2em;
+        border-radius: 7px;
+        border: 2px solid black;
+    }
+
+    .view-cv-button-desktop p {
+        font-size: ;
+    }
+
+
+    .projects {
+        grid-area: projects;
+    }
+
+    .project-card {
+
+        height:;
+        transition: transform 200ms;
+
+        display:grid;
+        grid-template-rows: 2fr 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+            'card-copy card-img';
+        border-radius: 7px;
+        
+    }
+
+    .project-card:hover {
+        transform: scale(1.017);
+     
+    }
+
+    .card-text {
+        grid-area: card-copy;
+    }
+
+    .project-card img {
+        grid-area: card-img;
+        padding-left: 20px; 
+        padding-right: 20px;
+        margin: auto 0;
+        max-width: 500px;
+    }
+
+
 
     .experience {
         grid-area: exp;
     }
-
-    .view-cv-button {
-        grid-area: cv-button;
-    }
-
     
     }
